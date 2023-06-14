@@ -1,0 +1,98 @@
+/* raleway-300 - latin */
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: local(''),
+         url('../fonts/raleway-v28-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/raleway-v28-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* raleway-600 - latin */
+  @font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: local(''),
+         url('../fonts/raleway-v28-latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/raleway-v28-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* raleway-800 - latin */
+  @font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: local(''),
+         url('../fonts/raleway-v28-latin-800.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/raleway-v28-latin-800.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+@font-face {
+    font-family: 'Font Awesome 6 Brands';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local(''),
+        url('../webfonts/fa-brands-400.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('../webfonts/fa-brands-400.ttf') format('ttf'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+:root {
+    font-variant-ligatures: none;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1.556;
+    color: black;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, .h99 {
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+}
+
+h1, .h1 {
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+h2, .h2 {
+    font-weight: 600;
+    font-size: 1.556rem;
+}
+
+h3, .h3 {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.fs-7 {
+    font-size: 0.889rem;
+}
+
+strong, b {
+    font-weight: 600;
+}
+
+.section_title {
+    border-bottom: 2px solid $magenta-400;
+    margin-bottom: 1rem;
+    padding-bottom: 0.25rem;
+    h2 {
+        font-size: 1.778rem;
+    }
+}

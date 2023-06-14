@@ -1,0 +1,57 @@
+.partners_slider {
+    padding: 4rem 0 5rem 0;
+    background: rgb(14,102,146);
+    background: linear-gradient(45deg, rgba(14,102,146,1) 0%, rgba(130,179,199,1) 100%);
+    position: relative;
+    z-index: 0;
+    .overlay--dots-wo {
+        position: absolute;
+        inset: 0;
+        // background-image: url('../img/bg--dots-wo.svg');
+        background-image: url('../img/bg--points-wo.svg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        opacity: 0.2;
+    }
+    &__slide {
+        background-color: #fff;
+        border-radius: 0.25rem;
+        height: 150px !important;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        margin: 0 0.25rem;
+        padding: 1rem;
+        object-fit: contain;
+        img {
+            max-height: 100%;
+        }
+    }
+    
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        top: -10px;
+        height: 45px;
+        background-image: url('../img/divider--top.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 10;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        bottom: -10px;
+        height: 45px;
+        background-image: url('../img/divider--bottom.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 10;
+    }
+}

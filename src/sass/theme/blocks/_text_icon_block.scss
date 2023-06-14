@@ -1,0 +1,74 @@
+.text_icon_block {
+    padding: 2rem 0;
+
+    &__image {
+        width: 100%;
+        max-width: 300px;
+        filter: drop-shadow(0px 8px 24px rgba(255, 255, 255, 0.4));
+    }
+
+    .fw-bold {
+        text-align: center;
+        @media (min-width:992px) {
+            text-align: left;
+        }
+    }
+    .apis {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        @media (min-width:992px) {
+            justify-content: flex-start;
+        }
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        &__link {
+            width: 110px;
+            text-decoration: none;
+            color: black;
+            &:hover {
+                .apis__img--hover {
+                    opacity: 1;
+                }
+                .apis__img {
+                    opacity: 0;
+                }
+            }
+        }
+        &__icon {
+            position: relative;
+            height: 70px;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: center;
+        }
+        &__img, &__img--hover {
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            transition: all 0.3s ease-in-out;
+        }
+        &__img--hover {
+            opacity: 0;
+        }
+        &__title--hover {
+            text-align: center;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            line-height: 1.4;
+        }
+        
+    }
+
+    .text_icon__icon {
+        position: relative;
+        .icon-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url(../img/icon-bg.png);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
+}

@@ -1,0 +1,83 @@
+.address_map {
+    position: relative;
+    padding: 5rem 0;
+    li {
+        margin-bottom: 1rem;
+    }
+    .fa-li {
+        color: $magenta-400;
+    }
+    a {
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: initial;
+        &:hover {
+            color: $magenta-400;
+        }
+    }
+    // iframe {
+    //     border-radius: 0.25rem;
+    //     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    // }
+    .social_icons {
+        font-size: 2rem;
+        display: flex;
+        justify-content: flex-start;
+        gap: 2rem;
+        a {
+            color: $magenta-400;
+            &:hover {
+                color: $grey-300;
+            }
+        }
+    }
+}
+.contact_form {
+    padding: 5rem 0;
+    position: relative;
+    .overlay--dots-wo {
+        position: absolute;
+        inset: 0;
+        background-image: url('../img/bg--points-wo.svg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.2;
+    }
+    .overlay--dots {
+        position: absolute;
+        inset: 0;
+        background-image: url('../img/bg--points.svg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.4;
+    }
+    .card {
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        top: -10px;
+        height: 45px;
+        background-image: url('../img/divider--top.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 10;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        bottom: -10px;
+        height: 45px;
+        background-image: url('../img/divider--bottom.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 10;
+    }
+}

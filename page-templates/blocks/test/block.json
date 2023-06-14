@@ -1,0 +1,13 @@
+{
+    "name": "cb/test",
+    "title": "XX Test",
+    "description": "A test block.",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["test"],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "test.php"
+    },
+    "align": "full"
+}

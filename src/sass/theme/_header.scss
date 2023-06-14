@@ -1,0 +1,112 @@
+#wrapper-navbar {
+    transition: all 0.3s ease-in-out;
+    &.hide {
+        top: -140px;
+    }
+    &.scrolled {
+        background-color: white;
+        color: black;
+        #nav .logo {
+            // background-image: url(../img/saascada-logo--strap--colour--crop.png);
+            background-image: url(../img/saascada-logo--nostrap--colour.svg);
+        }
+        #main-nav a {
+            color: black;
+        }
+        .navbar-toggler {
+            color: black;
+        }
+    }
+}
+
+#nav {
+    // background-color: $blue-400;
+    font-weight: 300;
+    font-size: 0.889rem;
+    a:not(.logo) {
+        position: relative;
+        text-decoration: none;
+        text-transform: uppercase;
+        @media (min-width:1200px) {
+            &::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: $magenta-400;
+                transform: scaleX(0);
+                transition: transform .3s ease-out;
+                transform-origin: bottom right;
+                z-index: -10;
+            }
+            &:hover::after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+            }
+        }
+    }
+    .logo {
+        // background-image: url(../img/saascada-logo--strap--wo--crop.png);
+        background-image: url(../img/saascada-logo--nostrap--wo.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        width: 235px;
+        height: 50px;
+        margin-right: 2rem;
+        margin-bottom: 2px;
+    }
+    #main-nav {
+        a {
+            color: white;
+            padding-bottom: 0;
+        }
+        li:not(:last-of-type) {
+            // border-bottom: 1px solid $grey-100-tx;
+            max-width: 70vw;
+        }
+        @media (min-width:1200px) {
+            a {
+                color: white;
+                line-height: 1;
+            }
+            li {
+                border-bottom: none;
+                max-width: unset;
+            }
+        }
+    }
+    .navbar-toggler {
+        border: none;
+        color: white;
+
+        display: flex;
+        height: 36px;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    .current_page_parent,
+    .current_page_item {
+        font-weight: 600;
+    }
+}
+
+.navwhite {
+    background-color: white;
+    color: black;
+    #nav .logo {
+        background-image: url(../img/saascada-logo--nostrap--colour.svg);
+    }
+    #main-nav a {
+        color: black !important;
+    }
+    .navbar-toggler {
+        color: black !important;
+    }
+}
+

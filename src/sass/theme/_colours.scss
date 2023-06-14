@@ -1,0 +1,42 @@
+.text--white {
+    color: $white;
+}
+.text--magenta {
+    color: $magenta-400;
+}
+.text--grey {
+    color: $grey-400;
+}
+
+.bg--grey {
+    background-color: $grey-50;
+}
+
+.bg--light {
+    background-color: white;
+}
+
+.bg--grad-teal {
+    background: rgb(14,102,146);
+    background: linear-gradient(45deg, rgba(14,102,146,1) 0%, rgba(130,179,199,1) 100%);
+}
+
+
+.has-magenta-color {
+    color: $magenta-400 !important;
+}
+.has-magenta-background-color {
+    background-color: $magenta-400 !important;
+}
+.has-teal-color {
+    color: $teal-400 !important;
+}
+.has-teal-background-color {
+    background-color: $teal-400 !important;
+}
+.has-mint-color {
+    color: $mint-400 !important;
+}
+.has-mint-background-color {
+    background-color: $mint-400 !important;
+}

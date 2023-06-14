@@ -1,0 +1,46 @@
+.people_grid {
+    .person {
+        &__img {
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 550px;
+            @media (min-width:768px) {
+                height: 270px;
+            }
+            @media (min-width:992px) {
+                height: 320px;
+            }
+
+        }
+        &__meta {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem;
+        }
+        &__title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        &__role {
+            font-size: 0.889rem;
+        }
+        &__bio {
+            padding: 0.5rem;
+            font-size: 0.889rem;
+        }
+    }
+
+    .card {
+        overflow: hidden;
+        min-height: 200px;
+        // box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        // transition: all 0.3s ease;
+        // &:hover {
+        //     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        //     transform: translateY(2px);
+        // }
+    }
+}
