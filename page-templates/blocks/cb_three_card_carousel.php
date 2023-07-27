@@ -48,7 +48,7 @@
                             <?php
                             if (get_field('excerpt_title',$c->ID)) {
                                 ?>
-                            <h3 class="fs-4 text-center"><?=get_field('excerpt_title',$c->ID)?></h3>
+                            <h3 class="fs-5"><?=get_field('excerpt_title',$c->ID)?></h3>
                                 <?php
                             }
                             ?>

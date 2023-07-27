@@ -200,10 +200,10 @@ function acf_blocks() {
 }
 add_action('acf/init', 'acf_blocks');
 
-add_action( 'init', 'register_acf_blocks', 5 );
-function register_acf_blocks() {
-    register_block_type( __DIR__ . '/../page-templates/blocks/test' );
-}
+// add_action( 'init', 'register_acf_blocks', 5 );
+// function register_acf_blocks() {
+//     register_block_type( __DIR__ . '/../page-templates/blocks/test' );
+// }
 
 // Gutenburg core modifications
 add_filter( 'register_block_type_args', 'core_image_block_type_args', 10, 3 );
