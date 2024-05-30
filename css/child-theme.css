@@ -23014,7 +23014,16 @@ strong, b {
 .partners .grid {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(3, 1fr);
+}
+@media (min-width: 992px) {
+  .partners .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .partners .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .partners_slider {
