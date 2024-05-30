@@ -1,7 +1,21 @@
 <!-- partners -->
 <section class="partners">
     <div class="container">
-        <div class="row g-4 pt-4 pb-5 justify-content-center">
+    <?php
+        $cats = get_categories( array( 'taxonomy' => 'partner-type'));
+        ?>
+        <div class="filters mb-4">
+            <select name="" id="filter-select" class="form-select">
+                <option value="all">All</option>
+            <?php
+        foreach ($cats as $cat) {
+            echo '<option value="' . cbslugify($cat->name) . '">' . $cat->cat_name . '</option>';
+        }
+        ?>
+            </select>
+        </div>
+
+        <div class="grid w-100 pb-4" id="grid">
             <?php
 $q = new WP_Query(array(
     'post_type' => 'partners',
@@ -11,31 +25,20 @@ $q = new WP_Query(array(
 
     while ($q->have_posts()) {
         $q->the_post();
-        $url = get_field('url',get_the_ID());
+        $url = get_field('url',get_the_ID()) ?? null;
+        $cats = get_the_terms( get_the_ID(), 'partner-type');
+        $category = wp_list_pluck($cats, 'name');
+        $flashcat = cbslugify($category[0]);
+        $catclass = implode(' ', array_map( 'cbslugify', $category ) );
+        $category = implode(', ',$category);
         ?>
-<div class="col-md-6 col-lg-4">
-    <?php
-    if ($url) {
-        ?>
-    <a href="<?=$url?>" target="_blank" rel="nofollow">
-        <?php
-    }
-    ?>
-        <div class="card h-100 p-3 partner">
-            <div class="partner__logo">
-                <img src="<?=get_the_post_thumbnail_url(get_the_ID(),'large')?> " alt="">
-            </div>
-            <!-- <h2 class="fs-4"><?=get_the_title()?></h2> -->
-            <div><?=get_field('description',get_the_ID())?></div>
-        </div>
-    <?php
-    if ($url) {
-        ?>
-    </a>
-        <?php
-    }
-    ?>
-</div>
+<a class="grid-item card p-3 <?=$catclass?>" href="<?=$url?>" target="_blank" rel="nofollow">
+    <div class="partner__logo">
+        <img src="<?=get_the_post_thumbnail_url(get_the_ID(),'large')?> " alt="">
+    </div>
+    <!-- <h2 class="fs-4"><?=get_the_title()?></h2> -->
+    <div><?=get_field('description',get_the_ID())?></div>
+</a>
         <?php
     }
 wp_reset_postdata();
@@ -64,3 +67,42 @@ $bg = wp_get_attachment_image_url( get_field('hero_image','options'), 'full' );
         </div>
     </div>
 </section>
+<?php
+
+add_action('wp_footer',function(){
+    ?>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Get the select dropdown element
+    const filterSelect = document.getElementById('filter-select');
+    
+    // Get all the grid items
+    const gridItems = document.querySelectorAll('.grid-item');
+    
+    // Function to show/hide grid items based on the class
+    function filterItems(filterClass) {
+        gridItems.forEach(item => {
+            if (filterClass === 'all' || item.classList.contains(filterClass)) {
+                item.style.display = 'block';
+                setTimeout(() => {
+                    item.classList.remove('hidden');
+                }, 0);
+            } else {
+                item.classList.add('hidden');
+                setTimeout(() => {
+                    item.style.display = 'none';
+                }, 0);
+            }
+        });
+    }
+
+    // Add event listener to the select dropdown
+    filterSelect.addEventListener('change', () => {
+        const filterClass = filterSelect.value; // Use the selected value as the filter class
+        filterItems(filterClass);
+    });
+
+});
+    </script>
+    <?php
+},9999);
